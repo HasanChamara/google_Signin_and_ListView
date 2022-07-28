@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:googlesignin/home_screen.dart';
 
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const MyApp());
+  // runApp(const MyApp());
+  runApp(const MyAp());
 }
 
 class MyApp extends StatelessWidget {
@@ -92,7 +94,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     idToken: googleauth.idToken
                   );
                   await FirebaseAuth.instance.signInWithCredential(creds);
-                },
+
+                  // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                  //   return Home();
+                  // },),);
+
+
+                  },
                 child: Container(
                   color: Colors.red,
                   child: const Padding(
