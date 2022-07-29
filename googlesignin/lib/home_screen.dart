@@ -47,6 +47,22 @@ var imgList = [
   "assets/cooldrink.jpg"
 ];
 
+var tapToViewList = [
+  "Tap to view Products",
+  "Tap to view Products",
+  "Tap to view Products",
+  "Tap to view Products",
+  "Tap to view Products"
+];
+
+var openHourList = [
+      "Between 2-4 days island wide delivery",
+      "Between 2-4 days island wide delivery",
+      "Between 2-4 days island wide delivery",
+      "Between 2-4 days island wide delivery",
+      "Between 2-4 days island wide delivery"
+];
+
 class _ListViewHomePageState extends State<ListViewHomePage> {
   @override
   Widget build(BuildContext context) {
@@ -54,10 +70,10 @@ class _ListViewHomePageState extends State<ListViewHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("List View",
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.white),
         ),
         elevation: 0,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.red,
       ),
       body: ListView.builder(
           itemCount: imgList.length,
@@ -82,14 +98,20 @@ class _ListViewHomePageState extends State<ListViewHomePage> {
                       Stack(
                         alignment: Alignment.bottomLeft,
                         children: [
-                          Ink.image(
-                            height: 200,
-                            image: AssetImage(imgList[index]
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(30.0),
+                              child: Ink.image(
+                                image: AssetImage(imgList[index]),
+                                height: 220,
+                                fit: BoxFit.fill,
+                              ),
                             ),
-                            fit: BoxFit.fitWidth,
                           ),
                         ],
                       ),
+
 
                       Padding(
                         padding: const EdgeInsets.all(10.0),
@@ -100,11 +122,11 @@ class _ListViewHomePageState extends State<ListViewHomePage> {
                               titleList[index],
                               style: const TextStyle(
                                 fontSize: 25,
-                                color: Colors.grey,
+                                color: Colors.black,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            SizedBox(height: 10,),
+                            const SizedBox(height: 5,),
                             Container(
                               width: width,
                               child: Text(
@@ -112,6 +134,28 @@ class _ListViewHomePageState extends State<ListViewHomePage> {
                                 style: TextStyle(
                                   fontSize: 15,
                                   color: Colors.red[500],
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 5,),
+                            Container(
+                              width: width,
+                              child: Text(
+                                tapToViewList[index],
+                                style: const TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 5,),
+                            Container(
+                              width: width,
+                              child: Text(
+                                openHourList[index],
+                                style: const TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.black,
                                 ),
                               ),
                             )
