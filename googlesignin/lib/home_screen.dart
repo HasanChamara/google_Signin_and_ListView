@@ -69,7 +69,17 @@ class _ListViewHomePageState extends State<ListViewHomePage> {
     double width = MediaQuery.of(context).size.width * 0.6;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("List View",
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: (){},
+        ),
+        actions: [
+          IconButton(
+          icon: const Icon(Icons.shopping_cart),
+          onPressed: (){},
+          ),
+        ],
+        title: const Text("Our Shops",
           style: TextStyle(color: Colors.white),
         ),
         elevation: 0,
