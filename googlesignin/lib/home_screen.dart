@@ -64,10 +64,35 @@ var openHourList = [
 ];
 
 class _ListViewHomePageState extends State<ListViewHomePage> {
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width * 0.6;
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.orange,
+        unselectedItemColor: Colors.grey[500],
+        currentIndex: currentIndex,
+        onTap: (value){
+          currentIndex = value;
+          setState(() {
+
+          });
+        },
+        items: const [BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Home"
+        ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart),
+              label: "Cart"
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: "Profile"
+          )
+        ],
+      ),
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.menu),
@@ -149,15 +174,15 @@ class _ListViewHomePageState extends State<ListViewHomePage> {
                             ),
                             const SizedBox(height: 5,),
                             Container(
-                              width: width,
-                              child: Text(
-                                tapToViewList[index],
-                                style: const TextStyle(
-                                  fontSize: 15,
-                                  color: Colors.black,
+                                  width: width,
+                                  child: Text(
+                                    tapToViewList[index],
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
                             const SizedBox(height: 5,),
                             Container(
                               width: width,
