@@ -18,7 +18,6 @@ class MyAp extends StatelessWidget {
 
 class ListViewHomePage extends StatefulWidget {
   const ListViewHomePage({Key? key}) : super(key: key);
-
   @override
   _ListViewHomePageState createState() => _ListViewHomePageState();
 }
@@ -64,7 +63,10 @@ var openHourList = [
 ];
 
 class _ListViewHomePageState extends State<ListViewHomePage> {
+  // List<Widget> pages = [];
+  // int pageIndex = 0;
   int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width * 0.6;
@@ -81,7 +83,7 @@ class _ListViewHomePageState extends State<ListViewHomePage> {
         },
         items: const [BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: "Home"
+            label: "Home",
         ),
           BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart),
@@ -90,13 +92,14 @@ class _ListViewHomePageState extends State<ListViewHomePage> {
           BottomNavigationBarItem(
               icon: Icon(Icons.person),
               label: "Profile"
-          )
+          ),
         ],
       ),
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.menu),
-          onPressed: (){},
+          onPressed: (
+              ){},
         ),
         actions: [
           IconButton(
